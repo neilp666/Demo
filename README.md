@@ -1,6 +1,6 @@
 == README
 
-Demo App
+Sales Prospects App
 
 * Ruby version 2.0
 

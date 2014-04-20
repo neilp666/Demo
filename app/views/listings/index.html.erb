@@ -1,0 +1,35 @@
+<h1>Prospects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Telephone</th>
+      <th>Website</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.company %></td>
+        <td><%= listing.contact %></td>
+        <td><%= listing.email %></td>
+        <td><%= listing.telephone %></td>
+        <td><%= listing.website %></td>
+        <td><%= link_to 'Show', listing, class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>

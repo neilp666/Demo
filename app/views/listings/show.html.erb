@@ -1,0 +1,29 @@
+
+
+<p>
+  <strong>Company:</strong>
+  <%= @listing.company %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @listing.contact %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @listing.email %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @listing.telephone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @listing.website %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
