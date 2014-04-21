@@ -5,32 +5,16 @@
       <th class="center">Email Address</th>
       <th class="center">Telephone No</th>
       <th class="center">Website URL</th>
-      <th class="center">Actions</th>
+     
     </tr>
-  </table>
-
-
-<p>
-
-  <%= @listing.company %>
-</p>
-
-<p>
-  <%= @listing.contact %>
-</p>
-
-<p>
-  <%= @listing.email %>
-</p>
-
-<p>
-
-  <%= @listing.telephone %>
-</p>
-
-<p>
-  <%= @listing.website %>
-</p>
+<tr>
+        <td class="center"><%= @listing.company %></td>
+        <td class="center"><%= @listing.contact %></td>
+        <td class="center"><%= @listing.email %></td>
+        <td class="center"><%= @listing.telephone %></td>
+        <td class="center"><%= @listing.website %></td>
+</tr>
+</table>
 
 <% if current_user == @listing.user %>
   <%= link_to 'Edit', edit_listing_path(@listing) %> |
