@@ -24,13 +24,17 @@
         <td><%= listing.website %></td>
         <td><%= "Created by #{listing.user.name}" %></td>
         <td><%= link_to 'Show', listing, class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+
+        <% if (user_signed_in?) && (current_user == listing.user) %>
+          <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
+          <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
+<% end %>
